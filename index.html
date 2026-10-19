@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Canvas Confetti for light heart/petal effect -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -59,6 +62,7 @@
                 opacity: 0;
                 transform: translateY(12px) scale(0.98);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -67,24 +71,36 @@
 
         /* Gentle Floating Animation */
         @keyframes floatGentle {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
         }
+
         .animate-float {
             animation: floatGentle 3s ease-in-out infinite;
         }
     </style>
 </head>
-<body class="bg-gradient-soft min-h-screen flex items-center justify-center p-4 selection:bg-peach-200 selection:text-warmBrown">
+
+<body
+    class="bg-gradient-soft min-h-screen flex items-center justify-center p-4 selection:bg-peach-200 selection:text-warmBrown">
 
     <!-- Main Container -->
     <main class="w-full max-w-sm sm:max-w-md mx-auto relative z-10">
-        
+
         <!-- STEP 1: INITIAL MINIMAL ENVELOPE / PROMPT -->
-        <div id="step1" class="fade-in bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-sm border border-peach-100 text-center space-y-6">
-            
+        <div id="step1"
+            class="fade-in bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-sm border border-peach-100 text-center space-y-6">
+
             <!-- Icon -->
-            <div class="w-16 h-16 mx-auto rounded-full bg-peach-100 flex items-center justify-center text-peach-400 text-2xl animate-float">
+            <div
+                class="w-16 h-16 mx-auto rounded-full bg-peach-100 flex items-center justify-center text-peach-400 text-2xl animate-float">
                 🌸
             </div>
 
@@ -100,18 +116,25 @@
             </div>
 
             <!-- Open Letter Button -->
-            <button id="openBtn" class="w-full py-3.5 px-6 rounded-2xl bg-peach-200 hover:bg-peach-300 text-warmBrown font-semibold text-sm transition-all duration-300 shadow-sm active:scale-95">
+            <button id="openBtn"
+                class="w-full py-3.5 px-6 rounded-2xl bg-peach-200 hover:bg-peach-300 text-warmBrown font-semibold text-sm transition-all duration-300 shadow-sm active:scale-95">
                 Mở ra xem nè ✨
             </button>
         </div>
 
         <!-- STEP 2: LETTER CONTENT (Initially Hidden) -->
-        <div id="step2" class="hidden bg-white/80 backdrop-blur-md rounded-3xl p-7 sm:p-8 shadow-sm border border-peach-100 space-y-6">
-            
+        <div id="step2"
+            class="hidden bg-white/80 backdrop-blur-md rounded-3xl p-7 sm:p-8 shadow-sm border border-peach-100 space-y-6">
+
             <!-- Letter Header -->
-            <div class="border-b border-peach-100 pb-4 text-center">
-                <span class="text-2xl mb-1 block">💌</span>
-                <h2 class="text-lg font-bold font-comfortaa text-warmBrown">Gửi cậu,</h2>
+            <div class="border-b border-peach-100 pb-5 text-center">
+                <!-- Khung chứa ảnh chú chuột -->
+                <div class="w-32 h-32 mx-auto mb-3 rounded-2xl overflow-hidden shadow-sm border-2 border-peach-200">
+                    <img src="mouse.png" alt="Chuột hamster ôm hoa" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Tiêu đề -->
+                <h2 class="text-xl font-bold font-comfortaa text-warmBrown tracking-wide">Gửi cậu,</h2>
             </div>
 
             <!-- Letter Body -->
@@ -122,8 +145,9 @@
                 <p>
                     Mấy ngày qua trò chuyện cùng Ngọc, tớ thấy ngày nào cũng nhẹ nhàng và dễ chịu hơn hẳn.
                 </p>
-                <div class="p-3.5 rounded-2xl bg-peach-50 border border-peach-100 text-warmBrown font-semibold text-center text-xs sm:text-sm">
-                    Chiều mai đi học toi ghé gặp Ngọc một chút nhé, toi có chút quà muốn gửi tận tay cho Ngọc 😳.
+                <div
+                    class="p-3.5 rounded-2xl bg-peach-50 border border-peach-100 text-warmBrown font-semibold text-center text-xs sm:text-sm">
+                    Chiều mai đi học tớ ghé gặp Ngọc một chút nhé, tớ có chút quà muốn gửi tận tay cho Ngọc 😳.
                 </div>
             </div>
 
@@ -132,19 +156,22 @@
                 <p class="text-center text-xs font-semibold text-warmBrown/70">
                     Chiều mai hẹn gặp nhé? 🌷
                 </p>
-                
+
                 <div class="grid grid-cols-2 gap-3">
-                    <button class="response-btn py-3 px-4 rounded-xl bg-peach-100 hover:bg-peach-200 text-warmBrown font-semibold text-xs sm:text-sm transition-all duration-300 active:scale-95 text-center">
+                    <button
+                        class="response-btn py-3 px-4 rounded-xl bg-peach-100 hover:bg-peach-200 text-warmBrown font-semibold text-xs sm:text-sm transition-all duration-300 active:scale-95 text-center">
                         Được nha 🌸
                     </button>
-                    <button class="response-btn py-3 px-4 rounded-xl bg-peach-100 hover:bg-peach-200 text-warmBrown font-semibold text-xs sm:text-sm transition-all duration-300 active:scale-95 text-center">
+                    <button
+                        class="response-btn py-3 px-4 rounded-xl bg-peach-100 hover:bg-peach-200 text-warmBrown font-semibold text-xs sm:text-sm transition-all duration-300 active:scale-95 text-center">
                         Hẹn chiều mai ✨
                     </button>
                 </div>
             </div>
 
             <!-- Cute Thank You Response (Hidden initially) -->
-            <div id="thankYouMsg" class="hidden text-center space-y-2 py-3 bg-peach-50 rounded-2xl border border-peach-100 fade-in">
+            <div id="thankYouMsg"
+                class="hidden text-center space-y-2 py-3 bg-peach-50 rounded-2xl border border-peach-100 fade-in">
                 <span class="text-xl">🥰</span>
                 <p class="text-sm font-bold text-warmBrown font-comfortaa">Hẹn cậu chiều mai nhé!</p>
                 <p class="text-xs text-warmBrown/70">Tớ sẽ đợi cậu sau giờ tan học nè.</p>
@@ -224,4 +251,5 @@
         }
     </script>
 </body>
+
 </html>
